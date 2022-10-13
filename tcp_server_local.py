@@ -38,7 +38,7 @@ class servidor():
     def receber(self,connectionSocket, addr):
         while 1:
             sentence = connectionSocket.recv(1024)
-            print sentence
+            print(sentence)
             try:
                 nome = sentence.split("*")[1]
                 sentence = sentence.split("*")[0]
@@ -74,7 +74,7 @@ class servidor():
                 num = self.usuarios.index(connectionSocket)
 
                 if (num % 2) == 0:
-                    print sentence
+                    print (sentence)
                     self.usuarios[num+1].send("letra"+"*"+sentence)
                 else:
                     self.usuarios[num-1].send("letra"+"*"+sentence)
